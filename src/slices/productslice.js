@@ -25,7 +25,7 @@ const productslice = createSlice({
         state.items = action.payload;
        }).addCase(fetchproducts.rejected, (state, action) => {
         state.status = "failed";
-        state.error = action.error.message;
+        state.error = "ERROR 404";
        })
     }
 

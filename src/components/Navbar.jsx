@@ -5,6 +5,7 @@ const Navbar = () => {
   const cartitems = useSelector((state) => {
     return state.cart.items;
   });
+  const distinctcount = cartitems.length
   return (
     <div>
       <div className="flex justify-between h-20  items-center px-10 border-b-6">
@@ -13,10 +14,7 @@ const Navbar = () => {
         </h1>
         <Link to="/cart">
           <div>
-            {cartitems.reduce(
-              (accumulator, currentitem) => accumulator + currentitem.quantity,
-              0,
-            )}
+            {distinctcount}
           </div>
           <img
             className="size-10"
